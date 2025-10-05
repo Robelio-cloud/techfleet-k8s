@@ -82,11 +82,19 @@ No navegador colocar a URL http://127.0.0.1:34115/
 
 **1. Recursos no Cluster (Pods, Service, etc.)**
 
-*(Insira aqui um print da saída do comando `kubectl get all -n producao`)*
+![image](/images/07-k8s.png)
 
 **2. Acesso à Página Customizada**
 
-*(Insira aqui um print da saída do comando `curl` ou do navegador mostrando a mensagem personalizada)*
+![image](/images/11-k8s.png)
+
+Curl http://192.168.49.2:30080 NodePort, porta externa 30080
+
+![image](/images/12-k8s.png)
+
+NodePort, porta http://localhost:30080 no navegador
+
+![image](/images/24-k8s.png)
 
 ## Testes Realizados
 
@@ -94,25 +102,34 @@ No navegador colocar a URL http://127.0.0.1:34115/
 
 Para testar a escalabilidade, o Deployment foi escalado de 3 para 5 réplicas utilizando o comando:
 
+kubectl get pods -n producao -> Três pods em operação
+
+![image](/images/21-k8s.png)
+
 ```bash
 kubectl scale deployment app-portal --replicas=5 -n producao
 ```
+**Evidência 5 pods rodando:**
 
-**Evidência:**
+![image](/images/22-k8s.png)
 
-*(Insira aqui um print da saída do `kubectl get pods -n producao` mostrando os 5 pods rodando)*
 
 ### Teste de Resiliência
 
-Para testar a resiliência, um dos 5 Pods foi deletado manualmente para simular uma falha.
+Para testar a resiliência, TODOS os pods serão apagados manualmente para simular uma falha.
 
 ```bash
-# Comando usado para deletar um pod (substituir com o nome real)
-kubectl delete pod app-portal-xxxxxxxxxx-yyyyy -n producao
+# Comando usado para deletar todos os pod
+kubectl delete pods -l app=app-portal -n producao
 ```
+![image](/images/25-k8s.png)
 
-O ReplicaSet do Kubernetes detectou a ausência do Pod e iniciou um novo container imediatamente para manter o estado desejado de 5 réplicas, demonstrando a capacidade de auto-recuperação do sistema.
+
+O ReplicaSet do Kubernetes detectou a ausência do Pod e iniciou todos os 5 pods imediatamente para manter o estado desejado de 5 réplicas, demonstrando a capacidade de auto-recuperação do sistema.
 
 **Evidência:**
 
-*(Insira aqui um print da saída do `kubectl get pods -n producao -w` mostrando o pod antigo em "Terminating" e o novo sendo criado)*
+saída do `kubectl get pods -n producao -w` mostrando o status dos pods em "Terminating" e os novos sendo criados
+
+![image](/images/26-k8s.png)
+![image](/images/27-k8s.png)
