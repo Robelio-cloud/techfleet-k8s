@@ -9,12 +9,11 @@ Este repositório documenta a configuração de um ambiente de produção simula
 ```
 ├── images            # Pasta com prints de telas de comandos e URL da aplicação 
 ├── deployment.yaml    # Deployment com 3 réplicas + ConfigMap
-├── service.yaml      # Service NodePort com configurações na AWS
-├── pod.yaml          # Pod standalone para testes individuais
+├── index.html         # página html simples para comprovar a funcionalidade da aplicação
+├── service.yaml      # Service NodePort com configurações no localhost
 └── README.md         # Documentação do projeto
 
 ```
-
 
 ## Passo a Passo e Comandos Executados
 
