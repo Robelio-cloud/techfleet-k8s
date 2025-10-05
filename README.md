@@ -25,6 +25,11 @@ kubectl create namespace producao
 
 ![image](/images/02-k8s.png)
 
+kubectl get namespaces
+# O resultado deve listar o namespace "producao"
+
+![image](/images/03-k8s.png)
+
 **2. Customização da Aplicação com ConfigMap**
 
 ```bash
@@ -35,6 +40,8 @@ echo '<!DOCTYPE html><html><head><title>Bem-vindo a TechFleet!</title></head><bo
 kubectl create configmap app-portal-config --from-file=index.html -n producao
 ```
 
+![image](/images/04-k8s.png)
+
 **3. Deploy da Aplicação**
 
 ```bash
@@ -42,6 +49,11 @@ kubectl create configmap app-portal-config --from-file=index.html -n producao
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
 ```
+
+![image](/images/05-k8s.png)
+
+![image](/images/06-k8s.png)
+
 
 **4. Verificação**
 
@@ -53,8 +65,18 @@ kubectl get all -n producao
 minikube service app-portal-service -n producao --url
 
 # Testar o acesso via terminal
-curl $(minikube service app-portal-service -n producao --url)
+curl http://127.0.0.1:34115/
 ```
+![image](/images/07-k8s.png)
+
+![image](/images/08-k8s.png)
+
+No navegador colocar a URL http://127.0.0.1:34115/
+
+![image](/images/09-k8s.png)
+
+![image](/images/10-k8s.png)
+
 
 ## Evidências de Funcionamento
 
