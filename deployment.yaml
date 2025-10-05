@@ -1,0 +1,30 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-portal
+  namespace: producao
+  labels:
+    app: app-portal
+spec:
+  replicas: 3 # Requisito: Inicia com 3 réplicas
+  selector:
+    matchLabels:
+      app: app-portal
+  template:
+    metadata:
+      labels:
+        app: app-portal # Requisito: label app: app-portal
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest # Requisito: imagem nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: website-files
+          mountPath: /usr/share/nginx/html # Sobrescreve o conteúdo padrão do Nginx
+      volumes:
+      - name: website-files
+        configMap:
+          name: app-portal-config # Monta nosso ConfigMap como um volume

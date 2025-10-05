@@ -1,0 +1,15 @@
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-portal-service
+  namespace: producao
+spec:
+  type: NodePort # Requisito: Tipo NodePort
+  selector:
+    app: app-portal # Conecta este serviço aos Pods com a label app: app-portal
+  ports:
+    - protocol: TCP
+      port: 80 # Porta interna do serviço
+      targetPort: 80 # Porta onde os containers estão rodando
+      nodePort: 30080 # Requisito: Porta externa 30080
