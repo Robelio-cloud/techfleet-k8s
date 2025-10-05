@@ -6,11 +6,14 @@ Este repositório documenta a configuração de um ambiente de produção simula
 
 ## Estrutura do Repositório
 
--   `deployment.yaml` - Manifesto do Deployment que gerencia os Pods da aplicação (arquivo localizado na raiz do repositório).
--   `service.yaml` - Manifesto do Service que expõe a aplicação para acesso externo (arquivo localizado na raiz do repositório).
--   `index.html` - Página estática usada para criar o ConfigMap que serve o conteúdo ao app.
--   `images/` - Diretório contendo capturas de tela e evidências mostradas na documentação.
--   `README.md` - Este documento com o passo a passo e evidências.
+```
+├── images            # Pasta com prints de telas de comandos e URL da aplicação 
+├── deployment.yaml    # Deployment com 3 réplicas + ConfigMap
+├── service.yaml      # Service NodePort com configurações na AWS
+├── pod.yaml          # Pod standalone para testes individuais
+└── README.md         # Documentação do projeto
+
+```
 
 
 ## Passo a Passo e Comandos Executados
