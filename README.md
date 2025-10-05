@@ -21,6 +21,9 @@ minikube start
 # Criar o namespace
 kubectl create namespace producao
 ```
+![image](/images/01-k8s.png)
+
+![image](/images/02-k8s.png)
 
 **2. Customização da Aplicação com ConfigMap**
 
