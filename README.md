@@ -6,9 +6,12 @@ Este repositório documenta a configuração de um ambiente de produção simula
 
 ## Estrutura do Repositório
 
--   `/k8s/deployment.yaml`: Manifesto do Deployment que gerencia os Pods da aplicação.
--   `/k8s/service.yaml`: Manifesto do Service que expõe a aplicação para acesso externo.
--   `README.md`: Este documento com todo o passo a passo e evidências.
+-   `deployment.yaml` - Manifesto do Deployment que gerencia os Pods da aplicação (arquivo localizado na raiz do repositório).
+-   `service.yaml` - Manifesto do Service que expõe a aplicação para acesso externo (arquivo localizado na raiz do repositório).
+-   `index.html` - Página estática usada para criar o ConfigMap que serve o conteúdo ao app.
+-   `images/` - Diretório contendo capturas de tela e evidências mostradas na documentação.
+-   `README.md` - Este documento com o passo a passo e evidências.
+
 
 ## Passo a Passo e Comandos Executados
 
@@ -45,9 +48,9 @@ kubectl create configmap app-portal-config --from-file=index.html -n producao
 **3. Deploy da Aplicação**
 
 ```bash
-# Aplicar os manifestos do diretório k8s/
-kubectl apply -f k8s/deployment.yaml
-kubectl apply -f k8s/service.yaml
+# Aplicar os manifestos (arquivos na raiz do repositório)
+kubectl apply -f ./deployment.yaml
+kubectl apply -f ./service.yaml
 ```
 
 ![image](/images/05-k8s.png)
