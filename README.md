@@ -90,7 +90,7 @@ No navegador colocar a URL http://127.0.0.1:34115/
 
 ![image](/images/07-k8s.png)
 
-**2. Acesso à Página Customizada**
+**2. Acesso à Página Customizada via NodePort 30080**
 
 ![image](/images/11-k8s.png)
 
