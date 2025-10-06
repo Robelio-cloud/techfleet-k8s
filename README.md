@@ -30,8 +30,9 @@ kubectl create namespace producao
 
 ![image](/images/02-k8s.png)
 
-kubectl get namespaces
 # O resultado deve listar o namespace "producao"
+
+kubectl get namespaces
 
 ![image](/images/03-k8s.png)
 
