@@ -77,11 +77,11 @@ curl http://127.0.0.1:34115/
 
 ![image](/images/08-k8s.png)
 
-No navegador colocar a URL http://127.0.0.1:34115/
+No navegador colocar a URL http://127.0.0.1:39287/
 
-![image](/images/09-k8s.png)
+![image](/images/30-k8s.png)
 
-![image](/images/10-k8s.png)
+![image](/images/33-k8s.png)
 
 
 ## Evidências de Funcionamento
@@ -96,11 +96,11 @@ No navegador colocar a URL http://127.0.0.1:34115/
 
 Curl http://192.168.49.2:30080 NodePort, porta externa 30080
 
-![image](/images/12-k8s.png)
+![image](/images/31-k8s.png)
 
 NodePort, porta http://localhost:30080 no navegador
 
-![image](/images/24-k8s.png)
+![image](/images/32-k8s.png)
 
 ## Testes Realizados
 
