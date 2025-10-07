@@ -96,11 +96,11 @@ No navegador colocar a URL http://127.0.0.1:39287/
 
 ![image](/images/11-k8s.png)
 
-Curl http://192.168.49.2:30080 NodePort, porta externa 30080
+## Curl http://192.168.49.2:30080 NodePort, porta externa 30080
 
 ![image](/images/31-k8s.png)
 
-NodePort, porta http://localhost:30080 no navegador
+## NodePort porta 30080 no navegador http://localhost:30080 
 
 ![image](/images/32-k8s.png)
 
