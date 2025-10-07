@@ -1,5 +1,7 @@
 # TechFleet - Desafio Kubernetes: Ambiente de Produção Simulado
 
+![image](/images/32-k8s.png)
+
 ## Introdução
 
 Este repositório documenta a configuração de um ambiente de produção simulado para a aplicação web **app-portal** utilizando Kubernetes local (Minikube). O objetivo é validar a alta disponibilidade, escalabilidade e resiliência da aplicação antes de movê-la para um ambiente de nuvem.
